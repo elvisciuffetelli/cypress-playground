@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('seedAndVisit', (seedData = "todos.json") => {
+  cy.intercept({
+    method: "GET",
+    url: "/api/todos"
+  },
+  {fixture: seedData}
+  ).as("getTodos")
+  cy.visit('/')
+  cy.wait('@getTodos') // pass in the alias getTodos
+})

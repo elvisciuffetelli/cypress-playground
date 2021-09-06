@@ -5,7 +5,6 @@ import TodoList from './TodoList'
 import Footer from './Footer'
 import { saveTodo, loadTodos, destroyTodo, updateTodo } from '../lib/service'
 import { filterTodos } from '../lib/utils'
-import { setScheduler } from 'bluebird'
 
 export default class TodoApp extends Component {
   constructor(props) {

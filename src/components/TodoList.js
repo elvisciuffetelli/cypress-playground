@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TodoItem = props =>
-  <li className={props.isComplete ? "completed" : null}>
+ (<li className={props.isComplete ? "completed" : null}>
     <div className="view">
       <input className="toggle" type="checkbox"
         checked={props.isComplete}
@@ -12,11 +12,16 @@ const TodoItem = props =>
       <button className="destroy"
         onClick={() => props.handleDelete(props.id)}/>
     </div>
-  </li>
+  </li>)
 
-export default props =>
-  <ul className="todo-list">
+const todoList = props =>
+  (<ul className="todo-list">
     {props.todos.map(todo =>
-      <TodoItem key={todo.id} {...todo}     handleDelete={props.handleDelete}
-      handleToggle={props.handleToggle} />)}
-  </ul>
+      <TodoItem
+        key={todo.id} {...todo}
+        handleDelete={props.handleDelete}
+        handleToggle={props.handleToggle}
+      />)}
+  </ul>)
+
+export default todoList;
