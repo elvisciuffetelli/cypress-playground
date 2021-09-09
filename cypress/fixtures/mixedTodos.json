@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "One - fixture", "isComplete": false },
+  { "id": 2, "name": "Two- fixture", "isComplete": true },
+  {"id": 3, "name": "Three", "isComplete": false},
+  {"id": 4, "name": "four", "isComplete": true}
+]
